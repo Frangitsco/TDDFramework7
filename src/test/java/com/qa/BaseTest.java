@@ -2,6 +2,8 @@ package com.qa;
 
 import org.testng.annotations.Test;
 
+import com.qa.utils.TestUtils;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -63,7 +65,7 @@ public class BaseTest {
 	  }
   }
   public void waitForVisibility(WebElement e) {
-	  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	  WebDriverWait wait = new WebDriverWait(driver, TestUtils.WAIT);
 	  wait.until(ExpectedConditions.visibilityOf(e));
   }
 	  
